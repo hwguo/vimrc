@@ -115,11 +115,22 @@ set nofoldenable
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme {{{
-set term=xterm-256color
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-colorscheme solarized
+" set term=xterm-256color
+" let g:solarized_termcolors=256
+" let g:solarized_contrast="high"
+" let g:solarized_visibility="high"
+" colorscheme solarized
+" set background=dark
+" End of colorscheme }}}
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-molokai
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colorscheme {{{
+colorscheme molokai
 set background=dark
 " End of colorscheme }}}
 

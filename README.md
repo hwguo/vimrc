@@ -17,6 +17,7 @@ I made some deletion, only the following contains:
 
 - [vim-pathogen](https://github.com/tpope/vim-pathogen)
 - [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
+- [vim-colors-molokai](https://github.com/tomasr/molokai.git)
 - [vim-powerline](https://github.com/Lokaltog/vim-powerline)
 - [vim-indent-guide](https://github.com/nathanaelkane/vim-indent-guides)
 - [vim-signature](https://github.com/kshenoy/vim-signature)
