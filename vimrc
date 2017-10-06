@@ -70,7 +70,7 @@ set number
 
 " 高亮显示当前行/列
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 
 " 高亮显示搜索结果
 set hlsearch
@@ -208,6 +208,54 @@ au FileType python map <F2> :call InsertPythonComment()<cr>
 let g:python_author = 'henry'
 let g:python_email  = 'gzguohongwei@corp.netease.com'
 " end of pycomments }}}
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" c & cpp comment
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" cpp add comments {{{
+fun! InsertCppComment()
+    exe 'normal'.1.'G'
+    let line = getline('.')
+    if line =~ '^#.*$' || line =~ '^\/\*.*$'
+        return
+    endif
+    normal O
+    call setline('.', '/********************************************************')
+    normal o
+    call setline('.', ' *  Copyright (c) '.strftime("%Y").'. All right reserved. ')
+    normal o
+    call setline('.', ' *')
+    normal o
+    call setline('.', ' *  Author  :   '.g:cpp_author)
+    normal o
+    call setline('.', ' *  E-mail  :   '.g:cpp_email)
+    normal o
+    call setline('.', ' *  Date    :   '.strftime("%y/%m/%d %H:%M:%S"))
+    normal o
+    call setline('.', ' *  Desc    :    ')
+    normal o
+    call setline('.', ' *')
+    normal o
+    call setline('.', ' ********************************************************/')
+    normal o
+    call cursor(7, 17)
+endfun
+
+fun! InsertCommentWhenOpenCpp()
+    if a:lastline == 1 && !getline('.')
+        call InsertCppComment()
+    end
+endfun
+
+au FileType cpp,c :%call InsertCommentWhenOpenCpp()
+"au FileType cpp,c map <F2> :call InsertCppComment()<cr>
+
+let g:cpp_author = 'henry'
+let g:cpp_email  = 'hwguo1988@gmail.com'
+" end of cppcomments }}}
 
 
 
