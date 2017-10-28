@@ -333,7 +333,7 @@ let g:tagbar_type_cpp = {
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
 " 设置NERDTree子窗口宽度
-let NERDTreeWinSize=32
+let NERDTreeWinSize=36
 
 " 设置NERDTree子窗口位置
 let NERDTreeWinPos="right"
